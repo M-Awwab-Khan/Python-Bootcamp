@@ -1,5 +1,5 @@
-# Python Starter
+# Python Pro Bootcamp
 
-Quickly get started with [Python](https://www.python.org/) using this starter! 
+This repository is dedicated to completing python pro bootcamp in 100 Days
 
-- If you want to upgrade Python, you can change the image in the [Dockerfile](./.codesandbox/Dockerfile).
+- If you want to have the source code then you are free to clone this repository. 

@@ -46,8 +46,9 @@ print(3 * (3 + 3) / 3 - 3)
 round(4.6666666666)
 
 # Floor division or Truncated Division
-9 // 4
-
+9 // 4 = 2
+# Remainder division
+9 % 2 = 1
 # Shorthand Operators
 # a += 2  short for a = a + 2
 # -=
