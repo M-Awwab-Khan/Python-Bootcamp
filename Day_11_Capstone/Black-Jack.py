@@ -20,7 +20,13 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
 def calculate_score(computer_cards, user_cards):
+    if 11 in computer_cards and sum(computer_cards) > 21:
+        computer_cards.remove(11)
+        computer_cards.append(1)
     computer_score = sum(computer_cards)
+    if 11 in user_cards and sum(user_cards) > 21:
+        user_cards.remove(11)
+        user_cards.append(1)
     user_score = sum(user_cards)
     return [computer_score, user_score]
 
