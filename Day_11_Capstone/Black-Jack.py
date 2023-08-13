@@ -1,5 +1,6 @@
 ############### Blackjack Project #####################
 import random
+from art import logo
 # Difficulty Normal 😎: Use all Hints below to complete the project.
 # Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
 # Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
@@ -92,28 +93,34 @@ def deal_cards(type):
                 return -1
 
 
-end_of_game = False
-while not end_of_game:
-    computer_cards = []
-    computer_score = 0
-    user_cards = []
-    user_score = 0
-    should_continue = True
-    status = deal_cards("start")
-    if status == 1 or status == -1:
-        end_of_game = True
-        should_continue = False
-    while should_continue:
-        get_or_pass = input("Type 'y' to get another card, type 'n' to pass: ")
-        if get_or_pass == 'y':
-            status = deal_cards("get")
-            if status == 0 or status == -1:
-                end_of_game = True
-                should_continue = False
-        elif get_or_pass == 'n':
-            status = deal_cards("pass")
-            end_of_game = True
+want_to_play = input(
+    "Do you want to play a game of Blackjack. Type 'y' to play or 'n' to exit: ")
+if want_to_play == 'y':
+    end_of_game = False
+    while not end_of_game:
+        print(logo)
+        computer_cards = []
+        computer_score = 0
+        user_cards = []
+        user_score = 0
+        should_continue = True
+        status = deal_cards("start")
+        if status == 1 or status == -1:
             should_continue = False
+        while should_continue:
+            get_or_pass = input(
+                "Type 'y' to get another card, type 'n' to pass: ")
+            if get_or_pass == 'y':
+                status = deal_cards("get")
+                if status == 0 or status == -1:
+                    should_continue = False
+            elif get_or_pass == 'n':
+                status = deal_cards("pass")
+                should_continue = False
+        play_again = input(
+            "Do you want to play again. Type 'y' to play or 'n' to exit: ")
+        if play_again == 'n':
+            end_of_game = True
 
         ##################### Hints #####################
 
